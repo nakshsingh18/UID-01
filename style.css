@@ -238,12 +238,7 @@ header .navbar a:hover{
     width: 100%;
     border-radius: .5rem;
 }
-.popular .box-container .box img{
-    height: 25rem;
-    object-fit: cover;
-    width: 100%;
-    border-radius: .5rem;
-}
+
 
 .popular .box-container .box .price {
     position: relative;
