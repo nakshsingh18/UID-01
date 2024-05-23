@@ -25,12 +25,21 @@ html{
     scroll-padding-top: 6rem;   
 }
 
+main {
+    padding-top: 100px; /* Adjust this value based on your header height */
+}
+
 body{
     background: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;    
 }
 
 section{
     padding: 2rem 9%;
+    margin-bottom: 3rem; 
 }
 
 .heading{
@@ -68,6 +77,7 @@ header{
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 1000;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -81,6 +91,12 @@ header .logo{
     font-weight: bolder;
     color: #666;
 }
+header .logo img {
+    width: 50px; /* Adjust the width according to your design */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Adjust spacing as needed */
+}
+
 
 header .logo i{
     padding-right: 5rem;
@@ -91,6 +107,8 @@ header .navbar a{
     font-size: 2rem;
     margin-left: 2rem;
     color: #666;
+    margin: 0 10px;
+    text-decoration: none;
 }
 
 header .navbar a:hover{
@@ -206,10 +224,21 @@ header .navbar a:hover{
     transform: translateY(100%);
 }
 
+.popular {
+    padding-top: 6rem; /* Adjust the top padding as needed */
+}
+
+.popular .heading {
+    padding: 105px 0; /* Adjust as needed */
+    text-align: center;
+    background: #f9f9f9;
+}
+
 .popular .box-container{
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
+    justify-content: center;
 }
 
 .popular .box-container .box{
@@ -252,11 +281,19 @@ header .navbar a:hover{
     padding: 1rem .1rem;
 }
 
-.steps{
+.steps {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    padding: 1rem 0;
+    flex-direction: column; /* Align children (title and boxes) in a vertical stack */
+    align-items: center; /* Center-align items horizontally */
+    text-align: center; /* Center-align text for all children, if needed */
+    gap: 2rem; /* Provides space between the title and the icon row */
+    padding: 2rem 0; /* Top and bottom padding */
+}
+
+.steps h1.heading {
+    width: 100%; /* Ensures the heading spans the full width */
+    margin-top: 0;
+    margin-bottom: 1rem; /* Adjusts spacing below the title */
 }
 
 .steps .box{
@@ -266,7 +303,8 @@ header .navbar a:hover{
 }
 
 .steps .box img{
-    width: 100%; height: 100%; /* Fixed width and height values */
+   max-width: 100%; height: auto; /* Fixed width and height values */
+   object-fit: cover;
     border-radius: 100%;
     border: 1rem solid #fff;
     box-shadow:0 .5rem 1rem rgba(0, 0, 0, .1);
@@ -276,6 +314,20 @@ header .navbar a:hover{
     font-size: 2.5rem;
     color: #333;
     padding: 1rem;
+}
+
+.step-with-arrow::after {
+    content: '↓'; /* Unicode downward arrow */
+    color: #000; /* Color of the arrow */
+    font-size: 2rem; /* Size of the arrow */
+    display: block; /* Ensures it appears below the box */
+    text-align: center; /* Center the arrow horizontally */
+    margin-top: 0.5rem; /* Space above the arrow */
+}
+
+
+.gallery{
+    padding: 150px 0;
 }
 
 .gallery .box-container{
@@ -387,6 +439,218 @@ header .navbar a:hover{
     color: gold;
 }
 
+#order {
+    background-color: #fff;
+    padding: 150px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+#order .container {
+    display: flex;
+    flex-direction: column;
+}
+
+#order .heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#order form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+#order input[type="text"],
+#order input[type="email"],
+#order input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#order input[type="text"],
+#order input[type="email"],
+#order input[type="number"] {
+    text-transform: none;
+}
+
+#order .btn {
+    background-color: #c0392b;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#order .btn:hover {
+    background-color: #e74c3c;
+}
+
+
+#bill-output {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#bill-output h2 {
+    color: #333;
+}
+
+#bill-output p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Base mobile styles */
+#order .container {
+    padding: 20px;
+    width: 90%; /* Make container use almost full width on small screens */
+}
+
+#order input[type="text"],
+#order input[type="email"],
+#order input[type="number"] {
+    padding: 8px; /* Adjust padding for better tap-ability */
+}
+
+#order .btn {
+    padding: 10px 20px; /* Larger button for easier clicking */
+}
+
+#bill-container {
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: 1px solid #ddd; /* subtle border */
+}
+
+
+/* Footer Styles */
+footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.footer-content h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.footer-content .socials {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-content .socials li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.footer-content .socials li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    border: 1px solid #fff;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.footer-content .socials li a:hover {
+    background-color: #f44336;
+    border-color: #f44336;
+}
+
+.footer-bottom {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 0.9em;
+    border-top: 1px solid #444;
+}
+
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #555;
+}
+
+
+/* CSS styles for loader */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure the loader appears above other content */
+}
+
+.loader::after {
+    content: url('https://cdn.dribbble.com/users/12755/screenshots/1036842/media/99d83efd4b719adff7480ac048434dfd.gif');
+    width: 120px; /* Adjust size as needed */
+    height: 120px; /* Adjust size as needed */
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 0.8em;
+}
+
+input.error {
+    border-color: #e74c3c;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
 
 /* media queries */
@@ -403,6 +667,13 @@ header .navbar a:hover{
     }
 }
  
+@media (max-width: 768px) {
+    section {
+        padding: 2rem; /* Reduce padding for smaller screens */
+        margin-bottom: 2rem; /* Reduce margin-bottom for smaller screens */
+    }
+}
+
 @media(max-width:768px){
     #menu-bar{
         display: initial;
@@ -439,5 +710,65 @@ header .navbar a:hover{
 
     .review .box {
         width: 100%; /* Full width boxes on smaller screens */
+    }
+}
+
+
+/* This applies styles for devices with widths up to 768px */
+@media (max-width: 768px) {
+    #order .container {
+        width: 100%; /* Use full width for very small devices */
+    }
+
+    #order .form-group {
+        margin-bottom: 15px; /* Increase spacing */
+    }
+
+    #order .btn {
+        font-size: 1rem; /* Increase font size for readability */
+    }
+
+    #bill-output p {
+        font-size: 1rem; /* Larger text for easier reading */
+    }
+}
+
+/* You may also want to adjust styles for landscape mode on smaller devices */
+@media (max-width: 768px) and (orientation: landscape) {
+    #order .container {
+        max-width: 600px; /* Limit maximum width in landscape */
+        margin: auto; /* Center horizontally */
+    }
+
+    #order .btn {
+        width: 50%; /* Button width to better fit landscape view */
+        margin: 10px auto; /* Center button */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Styles for screens up to 768px width */
+    footer {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .footer-content {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .footer-content h3 {
+        font-size: 1.5em; /* Reduce font size for smaller screens */
+    }
+
+    .footer-content p {
+        font-size: 0.9em; /* Reduce font size for smaller screens */
+    }
+
+    .footer-content .socials li a {
+        padding: 8px; /* Reduce padding for social links */
+    }
+
+    .footer-content .socials li a:hover {
+        padding: 8px; /* Match padding on hover for consistency */
     }
 }
